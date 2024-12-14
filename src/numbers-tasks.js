@@ -97,7 +97,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a = 0, b = 0) {
-  return -b / a; // think about it!!!
+  return -b / a;
 }
 
 /**
@@ -283,12 +283,16 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  // eslint-disable-next-line no-nested-ternary
-  return index < 1
-    ? 0
-    : index <= 2
-    ? 1
-    : getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
+  if (index < 1) {
+    return 0;
+  }
+  if (index <= 2) {
+    return 1;
+  }
+  if (index > 2) {
+    return getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
+  }
+  return 0;
 }
 
 /**
